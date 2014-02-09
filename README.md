@@ -3,8 +3,6 @@ iotns
 
 Name server for iot devices
 
-To use:
-
 add name
 --------
     curl -X PUT 'iotns.herokuapp.com://addname?name=example.com&value=192.168.1.2'
@@ -17,11 +15,13 @@ clear all names
 ---------------
     curl -X DELETE 'iotns.herokuapp.com://clearnames'
 
-To register a name, run this at boot:
+To register a name
+------------------
     #! /bin/sh
     export ip=`ifconfig eth0 | sed -n 's/.*dr:\(.*\) Bc.*/\1/p'`
     export host=`hostname`
     curl -X PUT 'iotns.herokuapp.com://addname?name='$host'&value='$ip
 
-Add this to cron:
+Add this to cron
+----------------
     @reboot iotns.sh
