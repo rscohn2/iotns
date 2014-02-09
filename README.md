@@ -9,7 +9,9 @@ add name
 
 get name
 --------
-    curl 'iotns.herokuapp.com://addname?name=example.com'
+    curl 'iotns.herokuapp.com://getname?name=example.com'
+or point your browser at:
+http://iotns.herokuapp.com
 
 clear all names
 ---------------
@@ -25,3 +27,13 @@ To register a name
 Add this to cron
 ----------------
     @reboot iotns.sh
+or run a sketch:
+    void setup() {
+        // put your setup code here, to run once:
+        system("/etc/iotns.sh");
+        }
+
+    void loop() {
+        // put your main code here, to run repeatedly:
+
+    }
