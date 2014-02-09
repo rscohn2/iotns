@@ -1,0 +1,19 @@
+{
+  "name": "iotns",
+  "version": "0.0.0",
+  "description": "name server for iot devices",
+  "dependencies": {
+    "express": "3.4.8",
+    "jade": "*"
+  }
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:rscohn2/iotns.git"
+  },
+  "author": "Robert Cohn",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rscohn2/iotns/issues"
+  },
+  "homepage": "https://github.com/rscohn2/iotns"
+}
