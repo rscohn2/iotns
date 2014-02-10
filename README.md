@@ -20,13 +20,13 @@ clear all names
 To register a name
 ------------------
     #! /bin/sh
-    export ip=`ifconfig eth0 | sed -n 's/.*dr:\(.*\) Bc.*/\1/p'`
-    export host=`hostname`
-    curl -X PUT 'iotns.herokuapp.com://addname?name='$host'&value='$ip
+    export ip=`/sbin/ifconfig eth0 | /bin/sed -n 's/.*dr:\(.*\) Bc.*/\1/p'`
+    export host=`/bin/hostname`
+    /usr/bin/curl -X PUT 'iotns.herokuapp.com://addname?name='$host'&value='$ip
 
 Add this to cron
 ----------------
-    @reboot iotns.sh
+    @reboot /home/xxx/iotns.sh
 or run a sketch:
 
     void setup() {
