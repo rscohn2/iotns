@@ -7,6 +7,7 @@ var express = require('express');
 var routes = require('./routes');
 var user = require('./routes/user');
 var names = require('./routes/names.js');
+var accel = require('./routes/accel.js');
 var http = require('http');
 var path = require('path');
 
@@ -33,6 +34,10 @@ app.get('/', routes.index);
 app.put('/addname', names.add);
 app.delete('/clearnames', names.clear);
 app.get('/getname', names.get);
+
+app.post('/accel/add', accel.add);
+app.delete('/accel/clear', accel.clear);
+app.get('/accel/list', accel.list);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
